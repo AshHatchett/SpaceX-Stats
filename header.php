@@ -1,49 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="header.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
     <nav class="navbar">
-        <ul class="logo">
-            <li>
-                <a class="logo" href="index.php">SpaceX Stats</a>
-            </li>
-        </ul>
+        <div class="logo">
+            <a class="logoText" href="index.php">SpaceX Stats</a>
+        </div>
     </nav>
 
-    <nav class="navbar">
-        <ul class="navlist">
-            <li class="navlink">
-                <a>Missions</a>
-            </li>
-            <li class="navlink">
-                <a>Rockets</a>
-            </li>
-            <li class="navlink">
-                <a>Dragon</a>
-            </li>
-            <li class="navlink">
-                <a>Locations</a>
-            </li>
-            <li class="navlink">
-                <a>Recovery</a>
-            </li>
-            <li class="navlink">
-                <a>Engines</a>
-            </li>
-            <li class="navlink">
-                <a>Starlink</a>
-            </li>
-            <li class="navlink">
-                <a>About</a>
-            </li>
-        </ul>
+    <nav class="secondNavbar">
+        <div class="navlist">
+            <a class="navlink">Missions</a>
+            <a class="navlink">Rockets</a>
+            <a class="navlink">Dragon</a>
+            <a class="navlink">Locations</a>
+            <a class="navlink">Recovery</a>
+            <a class="navlink">Engines</a>
+            <a class="navlink">Starlink</a>
+            <a class="navlink">About</a>
+        </div>
     </nav>
 
 </body>
+
 </html>
