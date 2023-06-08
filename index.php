@@ -3,7 +3,7 @@
 
     include_once("header.php");
 
-    $query = "SELECT Rocket, Mission, Pad, Date, Recovery FROM launches";
+    $query = "SELECT id, Rocket, Mission, Pad, Date, Recovery FROM launches";
     $results = mysqli_query($conn, $query);
     $data = mysqli_fetch_all($results);
 
@@ -22,36 +22,53 @@
     <?php
 
     foreach ($data as $launch) {
-    
+
     echo "<div class='mainContainer'>";
         echo "<div class='rocketContainer'>";
-            echo "<img src='f9-slc40.jpg' alt='Falcon 9 Lifts Off From SLC-40' width='100%' height='100%'>";
+        $rocketTag = "SELECT rocketTag FROM launches WHERE id=" . $launch[0];
+        $results = mysqli_query($conn, $rocketTag);
+        $rocketTag = mysqli_fetch_all($results)[0][0];
+
+            switch ($rocketTag) {
+                case "f9":
+                    echo "<img src='f9-slc40.jpg' alt='Falcon 9 lifts off from SLC-40' width='100%' height='100%'>";
+                    break;
+                case "fh":
+                    echo "<img src='fh.jpg' alt='Falcon Heavy on Pad 39A before the Viasat-3 Americas mission' width='100%' height='100%'>";
+                    break;
+                case "ss":
+                    echo "<img src='ss.jpg' alt='B7 and S24 on awaiting the first Starship integrated launch' width='100%' height='100%'>";
+                    break;
+                case "f1":
+                    echo "<img src='f1.jpg' alt='Falcon 1 lifting off with RazakSat-1 from Omelek Island in the Kwajalein Atoll' width='100%' height='100%'>";
+                    break;
+            }  
         echo "</div>";
         echo "<div class='rocketInformationContainer'>";
             
             foreach ($launch as $key => $rocketInfoValue) {
                 switch ($key) {
-                    case 0:
+                    case 1:
                         echo "<div class=info-rocket>";
                         echo "<span class='bold-header'>Rocket:</span> " . $rocketInfoValue;
                         echo "</div>";
                         break;
-                    case 1:
+                    case 2:
                         echo "<div class=info-rocket>";
                         echo "<span class='bold-header'>Mission:</span> " . $rocketInfoValue;
                         echo "</div>";
                         break;
-                    case 2:
+                    case 3:
                         echo "<div class=info-rocket>";
                         echo "<span class='bold-header'>Pad:</span> " . $rocketInfoValue;
                         echo "</div>";
                         break; 
-                    case 3:
+                    case 4:
                         echo "<div class=info-rocket>";
                         echo "<span class='bold-header'>Date:</span> " . $rocketInfoValue;
                         echo "</div>";
                         break;
-                    case 4:
+                    case 5:
                         echo "<div class=info-rocket>";
                         echo "<span class='bold-header'>Recovery:</span> " . $rocketInfoValue;
                         echo "</div>";
