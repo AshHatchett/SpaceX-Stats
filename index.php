@@ -34,7 +34,7 @@
                     echo "<img src='f9-slc40.jpg' alt='Falcon 9 lifts off from SLC-40' width='100%' height='100%'>";
                     break;
                 case "fh":
-                    echo "<img src='fh.jpg' alt='Falcon Heavy on Pad 39A before the Viasat-3 Americas mission' width='100%' height='100%'>";
+                    echo "<img src='fh.jpg' alt='Falcon Heavy lifts of from Pad 39A with ArabSat-6A' width='100%' height='100%'>";
                     break;
                 case "ss":
                     echo "<img src='ss.jpg' alt='B7 and S24 on awaiting the first Starship integrated launch' width='100%' height='100%'>";

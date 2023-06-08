@@ -4,51 +4,54 @@
 	font-family: "Montserrat", sans-serif;
 }
 
-.navbar {
+.logo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: #000;
-	/* Padding goes: top, left, bottom, right */
 	padding: 2em 0 1em 0;
 }
 
-.navbar .navlist {
-	display: flex;
-	list-style: none;
-}
-
-.navbar .logo {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.navbar .logoText {
+.logo .logoText {
 	color: white;
 	font-weight: bold;
 	font-size: xx-large;
 	text-decoration: none;
 }
 
-.secondNavbar {
+nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: #000;
-	/* Padding goes: top, left, bottom, right */
-	padding: 0.5em 0 1em 0;
+	padding: 0 0.5em 0 1em 0;
+	width: 100%;
 }
 
-.secondNavbar .navlist {
+nav ul {
+	float: left;
 	display: flex;
 	list-style: none;
 }
 
-.secondNavbar .navlink {
+nav ul li {
+	float: left;
+	list-style: none;
+	position: relative;
 	color: white;
 	font-weight: bold;
 	font-size: large;
 	text-decoration: none;
 	padding: 0 2.5em 0 2.5em;
 }
+
+nav ul li a {
+	display: block;
+	text-decoration: none;
+}
+
+nav ul li ul {
+	display: block;
+	position: absolute;
+}
+
