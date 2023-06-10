@@ -15,8 +15,8 @@
 
     <nav>
         <ul>
-            <li><a>Missions</a></li>
-            <li><a href="#">Rockets</a>
+            <li><a href="missions.php">Missions</a></li>
+            <li><a>Rockets</a>
                 <ul>
                     <li><a href="#">Falcon 1</a></li>
                     <li><a href="#">Falcon 9</a></li>
@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="#">Omelek Island</a></li>
                     <li><a href="#">SLC-40</a></li>
-                    <li><a href="#">LC=39A</a></li>
+                    <li><a href="#">LC-39A</a></li>
                     <li><a href="#">SLC-4E</a></li>
                     <li><a href="#">SLC-6</a></li>
                     <li><a href="#">Starbase</a></li>
