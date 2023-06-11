@@ -6,6 +6,7 @@
     $query = "SELECT id, Rocket, Mission, Pad, Date, Recovery FROM launches";
     $results = mysqli_query($conn, $query);
     $data = mysqli_fetch_all($results);
+    $everyRow = mysqli_num_rows($results);
 
 ?>
 
@@ -15,11 +16,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missions</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="missions.css">
 </head>
 <body>
 
+    <form>
+        <input type="text" name="search">
+        <button type="submit" name="submit-search">Search</button>
+    </form>
+
     <?php
+
 
     foreach ($data as $launch) {
 
@@ -44,49 +51,35 @@
                     break;
             }  
         echo "</div>";
+
         echo "<div class='rocketInformationContainer'>";
-            
-            foreach ($launch as $key => $rocketInfoValue) {
-                switch ($key) {
-                    case 1:
-                        echo "<div class=info-rocket>";
-                        echo "<span class='bold-header'>Rocket:</span> " . $rocketInfoValue;
-                        echo "</div>";
-                        break;
-                    case 2:
-                        echo "<div class=info-rocket>";
-                        echo "<span class='bold-header'>Mission:</span> " . $rocketInfoValue;
-                        echo "</div>";
-                        break;
-                    case 3:
-                        echo "<div class=info-rocket>";
-                        echo "<span class='bold-header'>Pad:</span> " . $rocketInfoValue;
-                        echo "</div>";
-                        break; 
-                    case 4:
-                        echo "<div class=info-rocket>";
-                        echo "<span class='bold-header'>Date:</span> " . $rocketInfoValue;
-                        echo "</div>";
-                        break;
-                    case 5:
-                        echo "<div class=info-rocket>";
-                        echo "<span class='bold-header'>Recovery:</span> " . $rocketInfoValue;
-                        echo "</div>";
-                        break; 
+
+            $results = mysqli_query($conn, $query);
+
+            if ($everyRow > 0) {
+                while ($row = mysqli_fetch_assoc($results)) {
+                    echo "
+                        <p><span class='bold-header'>Rocket:</span>".$row['Rocket']."</p><br>
+                        <p><span class='bold-header'>Mission:</span>".$row['Mission']."</p><br>
+                        <p><span class='bold-header'>Pad:</span>".$row['Pad']."</p><br>
+                        <p><span class='bold-header'>Date:</span>".$row['Date']."</p><br>
+                        <p><span class='bold-header'>Recovery:</span>".$row['Recovery']."</p><br>";
                 }
-                
-                echo "<br>";
             }
         
             echo "</div>";
+
         echo "<div class='rocketButtonContainer'>";
             echo "<a href='launchtemplatepage.php' class='moreButton'>More</a>";
         echo "</div>";
+
     echo "</div>";
 
     }
 
     ?>
+
+    
 
 </body>
 </html>
